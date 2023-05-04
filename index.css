@@ -1,0 +1,25 @@
+:root {
+    --off-white: #F8FFE5; 
+    --green: #06D6A0; 
+    --blue: #1B9AAA;
+    --pink: #EF476F; 
+    --yellow: #FFC43D;
+    
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    background-color: var(--blue);
+}
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+    /* scroll-behavior: smooth; */
+
+}
+
