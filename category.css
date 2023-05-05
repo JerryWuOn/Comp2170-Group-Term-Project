@@ -1,0 +1,37 @@
+:root {
+    --off-white: #F8FFE5; 
+    --green: #06D6A0; 
+    --blue: #1B9AAA;
+    --pink: #EF476F; 
+    --yellow: #FFC43D;
+    
+}
+* {
+    box-sizing: border-box;
+}
+body, html {
+    font-family:"Rubik";
+    background-color:var(--off-white);
+}
+
+
+.categories{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto;
+}
+
+.categories a{
+    text-decoration: none;
+    text-align: center;
+}
+
+.category_picture{
+    width:260px;
+    height: 150px;
+}
+
+.categories_section{
+    flex-direction: column;
+    display: flex;
+}
