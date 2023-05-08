@@ -8,29 +8,53 @@
 }
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 body, html {
     font-family:"Rubik";
     background-color:var(--off-white);
+}
+.banner {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 280px;
+    height: 50px;
+    position: relative;
+    bottom: 50px;
+    z-index: 1;
 }
 
 
 .categories{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6,1fr);
-    gap: 5px;
+    grid-template-rows: repeat(4,1fr);
+    
+    
 
+}
+h1 {
+    text-align: center;
+    margin: 10px 0 10px;
 }
 
 .categories a{
     text-decoration: none;
-    text-align: center;
+   
+}
+.gk-banner {
+    color: var(--pink);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .category_picture{
-    width:260px;
-    height: 150px;
+    width: 280px;
+    height: 180px;
+    
 }
 
 .categories_section{
