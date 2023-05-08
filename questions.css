@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --off-white: #F8FFE5; 
+    --green: #06D6A0; 
+    --blue: #1B9AAA;
+    --pink: #EF476F; 
+    --yellow: #FFC43D;
+    --trainsition: all 300ms ease-in-out;
+    --RubikFont: "Rubik"
+}
+body {
+    font-family: "Rubik", sans-serif; 
+    background-color: var(--off-white);
+}
+
+.title {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
