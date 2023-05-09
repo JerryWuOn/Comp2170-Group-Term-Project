@@ -10,6 +10,7 @@
     box-sizing: border-box;
 }
 body, html {
+    margin: 0%;
     font-family:"Rubik";
     background-color:var(--off-white);
 }
@@ -33,6 +34,12 @@ body, html {
      background-color: var(--green);
      color:var(--off-white);
      font-size: 30px;
+     cursor: pointer;
+}
+
+#main-btn:hover{
+    background-color:var(--blue) ;
+    color: var(--green);
 }
 
 
