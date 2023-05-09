@@ -36,4 +36,8 @@ body, html {
 .categories_section{
     flex-direction: column;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    margin-top: 1em;
 }
