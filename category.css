@@ -69,6 +69,7 @@ h1 {
 .categories_section{
     flex-direction: column;
     display: flex;
+    align-items: center;
 }
 .title {
     display: flex;

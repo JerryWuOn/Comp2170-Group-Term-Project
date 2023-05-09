@@ -51,6 +51,22 @@ p {
    
    
 }
+
+.quiz-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.quiz-container progress{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 40px;
+
+}
+
 .button-container {
     display: flex;
     justify-content: flex-end;
