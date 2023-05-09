@@ -14,7 +14,10 @@ body, html {
     background-color:var(--off-white);
 }
 
-
+body h1{
+    display: flex;
+    justify-content: center;
+}
 .categories{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
