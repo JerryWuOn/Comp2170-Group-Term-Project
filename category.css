@@ -35,25 +35,31 @@ body, html {
 }
 h1 {
     text-align: center;
-    margin: 10px 0 10px;
+    margin: 20px 0 40px;
+    color: var(--pink);
+
 }
 
 .categories a{
     text-decoration: none;
    
 }
-.gk-banner {
+.gk-banner, .film-banner, .book-banner, .music-banner, .musical-banner, .tv-banner, .videoGames-banner, .boardGames-banner, .sci-banner, .comp-banner, .math-banner, .myth-banner, .sports-banner, .geography-banner, .history-banner, .politics-banner, .art-banner, .celebs-banner, .animals-banner, .veichles-banner, .comics-banner, .gadgets-banner, .anime-banner, .cartoons-banner {
     color: var(--pink);
     text-decoration: none;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 15px;
+    position: relative;
 }
+
+
 
 .category_picture{
     width: 280px;
     height: 180px;
+    
     
 }
 
