@@ -22,7 +22,23 @@ function updateCountdown() {
 
     countdown.innerHTML = `${minutes}: ${seconds}`
     time--;
-
-   
 }
+
+fetch("https://opentdb.com/api.php?amount=10&category=9")
+.then(response => response.json())
+.then(questions => {
+    const questionsContainer = document.querySelector('#questionsContainer');
+    questions.forEach(question => {
+      const questionElement = document.createElement('div');
+      questionElement.textContent = question.question;
+      questionsContainer.appendChild(questionElement);
+    });
+  })
+  .catch(error => {
+    console.log(error);
+  });
+
+
+  
+
 
