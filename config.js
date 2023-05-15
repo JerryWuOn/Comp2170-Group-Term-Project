@@ -1,0 +1,28 @@
+const categoryImages = {
+  "9": "pic1.jpeg",
+  "10": "pic2.jpeg",
+  "11": "pic3.jpeg",
+  "12": "music.jpg",
+  "13": "pic4.jpeg",
+  "14": "pic5.jpeg",
+  "15": "pic6.jpeg",
+  "16": "pic7.jpeg",
+  "17": "Natural-science.jpg",
+  "18": "computer-funny.gif",
+  "19": "22JumpStreet.gif",
+  "20": "mythology.webp",
+  "21": "sports.webp",
+  "22": "geography.jpg",
+  "23": "history.jpg",
+  "24": "politics.jpg",
+  "25": "art.jpg",
+  "26": "celebrities.avif",
+  "27": "animals.avif",
+  "28": "cars.jpg",
+  "29": "Comics.jpg",
+  "30": "gadgets.jpg",
+  "31": "anime.jpg",
+  "32": "cartoons.jpg",
+};
+
+export {categoryImages};
