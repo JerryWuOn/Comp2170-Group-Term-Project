@@ -58,6 +58,7 @@ p {
     justify-content: center;
     align-items: center;
     margin-top: 2em;
+    gap: 3em;
 }
 .question-container {
     margin-bottom: 30px;
