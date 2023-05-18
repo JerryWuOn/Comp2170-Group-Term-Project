@@ -36,6 +36,19 @@
    <div class="button-container">
        <button class="next-button">Finish</button>
    </div>
-  <script src="questions.js"></script>
+  
+   <script>
+    // Retrieve the selected category ID and image URL from localStorage
+    const selectedCategoryId = localStorage.getItem("selectedCategoryId");
+    const selectedCategoryImage = localStorage.getItem("selectedCategoryImage");
+    
+    // Update the image source in the image container
+    const mainImage = document.querySelector(".main-image");
+    mainImage.src = `images/${selectedCategoryImage}`;
+
+    // Your remaining JavaScript code here...
+   </script>
+
+   <script src="questions.js"></script>
 </body>
 </html>
