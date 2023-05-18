@@ -2,7 +2,7 @@ const categoryImages = {
   "9": "pic1.jpeg",
   "10": "pic2.jpeg",
   "11": "pic3.jpeg",
-  "12": "music.jpg",
+  "12": "/music.jpg",
   "13": "pic4.jpeg",
   "14": "pic5.jpeg",
   "15": "pic6.jpeg",
