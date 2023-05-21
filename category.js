@@ -18,7 +18,7 @@ function questionsLoad(dataCategories) {
 
     const linkElement = document.createElement("a");
     linkElement.classList.add("title");
-    linkElement.href = "question.html";
+    linkElement.href = `question.html?category=${id}`;
     linkElement.textContent = name;
 
     bannerElement.appendChild(linkElement);
