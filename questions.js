@@ -4,10 +4,10 @@ let alertDisplayed = false;
 let quizData;
 const numOfQuestions = 10;
 
+
 const countdown = document.getElementById("countdown");
 const messageContainer = document.getElementById("messageContainer");
 const finishButton = document.querySelector(".next-button");
-// add a click handler to finishButton, that uses finishQuiz
 finishButton.onclick = finishQuiz;
 
 const intervalId = setInterval(updateCountdown, 1000);
@@ -21,38 +21,62 @@ function finishQuiz () {
   const questions = document.querySelectorAll('.question ul')
   let userMissedQuestion = false;
   questions.forEach((question) => {
-      // if a query selector looking for a class of .selected comes back as null
+     
       if(question.querySelector('.selected') === null) {
-        // userMissedQuestion = true;
+       userMissedQuestion = true;
       }
-      // that means the user did not select an answer
-      // we want to trigger our alert, and do an early return
+    
   }) 
   if(userMissedQuestion) {
     alert('You missed a question!')
     return;
   }
 
-  // if the function is still running from here, then the user did answer every question, so we can mark them
-  // we want to scroll the user to the top of the page
-  // we need to start marking the quiz, so we grab all the .question divs
-  // we want to see if the answer containing a 'selected' class, has a matching inner text to the correct answer
+ 
   for (let index = 0; index < numOfQuestions; index++) {
-      console.log(index)    
-      debugger;
-      const correctAnswerText = quizData[index].correct_answer
-      const correctAnswerElem = findElementByInnerText(questions[index], correctAnswerText)
-      const selectedAnswerElm = questions[index].querySelector('.selected')
+    console.log(index);    
+    const correctAnswerText = quizData[index].correct_answer;
+    const answerOptions = questions[index].querySelectorAll('li');
+    const selectedAnswerElm = questions[index].querySelector('.selected');
 
-      if(correctAnswerElem.innerHTML === selectedAnswerElm.innerHTML) {
-          rightanswers++;
+    answerOptions.forEach((option) => {
+      if (option.innerHTML === correctAnswerText) {
+        highlightedAnswer(option, '#06D6A0'); 
+      } else if (option === selectedAnswerElm) {
+        highlightedAnswer(option, '#EF476F'); 
       } else {
-          
+        highlightedAnswer(option, '#EF476F'); 
       }
+    });
 
+   
+
+  
+
+    if (correctAnswerText === selectedAnswerElm.innerHTML) {
+      rightanswers++;
+      console.log('Question ' + (index + 1) + ': Correct');
+    } else {
+      console.log('Question ' + (index + 1) + ': Incorrect');
+    }
   }
 
+  function highlightedAnswer(element, color) {
+    element.style.backgroundColor = color
+  }
+
+  const score = (rightanswers / numOfQuestions) * 100; 
+  if(score < 50) {
+    alert('Final Score: ' + score + '%.' + ' Good Thing this is not for marks!!')
+  } else if(score >= 80) {
+    alert('Final Score: ' + score + '%' + 'YAY Good Job!!' )
+  }
+  else {
+    alert('Final Score: ' + score + '%')
+  }
 };
+
+
 
 function findElementByInnerText(parentElement, searchText) {
   const elements = parentElement.getElementsByTagName('*');
@@ -63,7 +87,7 @@ function findElementByInnerText(parentElement, searchText) {
     }
   }
 
-  return null; // Element not found
+  return null; 
 }
 
 function updateCountdown() {
@@ -72,8 +96,8 @@ function updateCountdown() {
     clearInterval(intervalId);
     alert("Time has ended. Redirecting to the main screen...");
     setTimeout(() => {
-      window.location.href = "index.html"; // Replace 'index.html' with the actual filename of your main screen
-    }, 1000); // Adjust the delay (in milliseconds) before redirecting to the main screen
+      window.location.href = "category.html"; 
+    }, 1000); 
     return;
   }
 
@@ -104,16 +128,16 @@ function selectedAnswer(event) {
   const parentElement = event.target.parentElement;
   const targetElement = event.target;
 
-  // Loop through each child element of the parent element
+ 
   for (const childElement of parentElement.children) {
     childElement.classList.remove("selected");
   }
 
-  // we have to add selected class to the event.target
+  
   targetElement.classList.add("selected");
 }
 
-// write our code here to extract the category id
+
 
 const urlParams = new URLSearchParams(window.location.search);
 const categoryID = urlParams.get("category");
@@ -133,16 +157,13 @@ fetch(
 
       const answersElement = document.createElement("ul");
 
-      // set up an array to temporarily hold all the the answer elements we build
+      
       const answersElements = [];
 
       question.incorrect_answers.forEach((incorrectAnswer) => {
         const incorrectAnswerElement = document.createElement("li");
         incorrectAnswerElement.innerHTML = incorrectAnswer;
         incorrectAnswerElement.classList.add("questions");
-        // current approach: we are immediately appending the element after we build it
-        // alternative approach: we can add them to an array, then
-        // answersElement.appendChild(incorrectAnswerElement);
         incorrectAnswerElement.addEventListener("click", selectedAnswer);
         answersElements.push(incorrectAnswerElement);
       });
@@ -150,18 +171,14 @@ fetch(
       const correctAnswerElement = document.createElement("li");
       correctAnswerElement.innerHTML = question.correct_answer;
       correctAnswerElement.classList.add("questions");
-      // current approach: we are immediately appending the element after we build it
-      // answersElement.appendChild(correctAnswerElement);
       correctAnswerElement.addEventListener("click", selectedAnswer);
 
       answersElements.push(correctAnswerElement);
-      // add the correct answer element, to our answersElements array
-
-      // once all the answers have been generated, we can shuffle the array
+    
       const shuffledArray = shuffleArray(answersElements);
       console.log(shuffledArray);
 
-      // then loop over it, and append each question to the questionsContainer
+    
       shuffledArray.forEach((answer) => {
         answersElement.appendChild(answer);
       });

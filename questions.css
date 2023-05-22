@@ -112,7 +112,7 @@ p {
     
 }
 .questions.selected {
-    background-color: #1B9AAA;
+    background-color: var(--yellow);
     box-shadow: none;
 }
 
