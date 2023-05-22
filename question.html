@@ -21,7 +21,10 @@
     </div>
     <!-- Questions section -->
     <div class="quiz-container" id="questionsContainer">
+        <dir id="results"></dir>
         <progress value="25" max="100"></progress>
+       
+
         <!-- <section class="quiz-questions">
             <h2>What is the biggest planet in our solar system</h2>
             <ul>
@@ -31,6 +34,8 @@
                <li class="question4">Neptune</li>
             </ul>
         </section> -->
+        <div class="correct"></div>
+        <div class="incorrect"></div>
     </div>
     
    <div class="button-container">
@@ -38,15 +43,15 @@
    </div>
   
    <script>
-    // Retrieve the selected category ID and image URL from localStorage
+    
     const selectedCategoryId = localStorage.getItem("selectedCategoryId");
     const selectedCategoryImage = localStorage.getItem("selectedCategoryImage");
     
-    // Update the image source in the image container
+   
     const mainImage = document.querySelector(".main-image");
     mainImage.src = `images/${selectedCategoryImage}`;
 
-    // Your remaining JavaScript code here...
+   
    </script>
 
    <script src="questions.js"></script>
